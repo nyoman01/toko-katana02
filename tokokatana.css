@@ -1,0 +1,107 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1f2937;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 20px 0;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #1f2937;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4b5563;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+/* Image Styling */
+img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+/* Animation for Cart Updates */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#cart-list li {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Total Price Section */
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #1f2937;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#total-price:hover {
+    background-color: #4b5563;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    li {
+        margin: 15px 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

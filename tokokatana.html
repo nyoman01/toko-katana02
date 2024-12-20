@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Perusahaan - Penjualan Katana</title>
+    <link rel="stylesheet" href="tokokatana.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Toko Katana Putrajaya",
+        "image": "https://example.com/logo-katana-Putrajaya.png",
+        "@id": "https://example.com",
+        "url": "https://example.com",
+        "telephone": "+62-859-7378-8631",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jl. taman nuri blok.NA7 No.36",
+            "addressLocality": "Pasarkemis",
+            "addressRegion": "Tangerang",
+            "postalCode": "15560",
+            "addressCountry": "ID"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -6.200000,
+            "longitude": 106.816666
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "15:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/TokoKatanaPutrajaya",
+            "https://www.instagram.com/TokoKatanaPutrajaya"
+        ],
+        "description": "Toko Katana Nusantara adalah toko kecil yang menjual katana berkualitas tinggi dengan desain autentik Jepang. Kami melayani pemesanan katana untuk koleksi atau keperluan seni bela diri.",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Katalog Katana",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Katana Tradisional Jepang",
+                        "description": "Katana dengan desain tradisional Jepang, cocok untuk koleksi.",
+                        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdpd2uzahK_1lUziQcv-iFxMp40nNJh3PbLw&s"
+                    },
+                    "price": "5000000",
+                    "priceCurrency": "IDR",
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Katana Modern",
+                        "description": "Katana dengan sentuhan modern untuk seni bela diri.",
+                        "image": "https://www.coolkatana.com/cdn/shop/articles/modern_black_steel_katana.jpg?v=1723181973"
+                    },
+                    "price": "7000000",
+                    "priceCurrency": "IDR",
+                    "availability": "https://schema.org/InStock"
+                }
+            ]
+        }
+    }
+    </script>
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-list');
+            const totalPrice = document.getElementById('total-price');
+            cartList.innerHTML = '';
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - Rp ${item.price.toLocaleString()}`;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Hapus';
+                removeButton.onclick = () => removeFromCart(index);
+                li.appendChild(removeButton);
+                cartList.appendChild(li);
+            });
+
+            totalPrice.textContent = `Total Harga: Rp ${total.toLocaleString()}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+</head>
+<body>
+    <h1>Profil Perusahaan</h1>
+    <p>Selamat datang di Toko Katana Nusantara. Kami menyediakan katana berkualitas tinggi untuk keperluan koleksi maupun seni bela diri. 
+        Kunjungi kami di alamat berikut:</p>
+    <address>
+        Jl. Taman nuri blok.NA7 No.36, Pasarkemis, Tangerang 15560, Indonesia<br>
+        Telepon: <a href="tel:+6285973788631">+62-859-7378-8631</a>
+    </address>
+    <p>Jam operasional:</p>
+    <ul>
+        <li>Senin - Jumat: 09:00 - 18:00</li>
+        <li>Sabtu: 10:00 - 15:00</li>
+    </ul>
+
+    <h2>Produk Kami</h2>
+    <ul>
+        <li>
+            <strong>Katana Tradisional Jepang</strong> <span>(Rating: 4.8/5)</span><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdpd2uzahK_1lUziQcv-iFxMp40nNJh3PbLw&s" alt="Katana Tradisional Jepang" style="width:200px; height:auto;"><br>
+            Katana dengan desain tradisional Jepang, cocok untuk koleksi.<br>
+            Harga: Rp 5.000.000<br>
+            <button onclick="addToCart('Katana Tradisional Jepang', 5000000)">Tambah ke Keranjang</button>
+        </li>
+        <li>
+            <strong>Katana Modern</strong> <span>(Rating: 4.7/5)</span><br>
+            <img src="https://www.coolkatana.com/cdn/shop/articles/modern_black_steel_katana.jpg?v=1723181973" alt="Katana Modern" style="width:200px; height:auto;"><br>
+            Katana dengan sentuhan modern untuk seni bela diri.<br>
+            Harga: Rp 7.000.000<br>
+            <button onclick="addToCart('Katana Modern', 7000000)">Tambah ke Keranjang</button>
+        </li>
+    </ul>
+
+    <h2>Keranjang Belanja</h2>
+    <ul id="cart-list">
+        <p>Keranjang Anda kosong</p>
+    </ul>
+    <p id="total-price">Total Harga: Rp 0</p>
+</body>
+</html>
